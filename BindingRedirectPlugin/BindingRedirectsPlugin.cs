@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
@@ -20,6 +22,17 @@ namespace BindingRedirectPlugin
         {
             Console.WriteLine("See if the binding redirect happens on the framework.");
             ExecuteAsync().GetAwaiter().GetResult();
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Console.WriteLine($"Loaded Libraries for BindingRedirectsPlugin...");
+            foreach(var type in assembly.GetTypes())
+            {
+                Console.WriteLine($"{type.FullName}");
+            }
+            Console.WriteLine($"Currently Loaded references...");
+            foreach(var referenceAssembly in Assembly.GetExecutingAssembly().GetReferencedAssemblies())
+            {
+                Console.WriteLine($"Reference: {referenceAssembly.FullName}");
+            }
             return 0;
         }
 
