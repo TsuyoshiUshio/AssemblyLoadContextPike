@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\PluginBase\PluginBase.csproj">
+			<Private>false</Private>
+			<ExcludeAssets>runtime</ExcludeAssets>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Azure.Cosmos" Version="3.23.0" />
+		<PackageReference Include="Azure.Storage.Blobs" Version="12.10.0" />
+	</ItemGroup>
+</Project>
+
+
+	

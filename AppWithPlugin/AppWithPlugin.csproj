@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\PluginBase\PluginBase.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="..\FrameworkLib\bin\Debug\FrameworkLib.dll">
+			<SpecificVersion>false</SpecificVersion>
+		</Reference>
+	</ItemGroup>
+
+</Project>
